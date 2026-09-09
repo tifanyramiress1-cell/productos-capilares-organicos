@@ -151,3 +151,28 @@ nav a:hover {
 .btn-comprar:hover {
     background-color: #52b788;
 }
+
+/* Pie de Página */
+footer {
+    background-color: #1b382b;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+}
+
+.footer-contenido p {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+}
+
+.redes-sociales a {
+    color: #a8e6cf;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin: 0 0.3rem;
+}
+
+.redes-sociales a:hover {
+    text-decoration: underline;
+}
