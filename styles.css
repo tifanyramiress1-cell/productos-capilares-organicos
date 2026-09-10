@@ -176,3 +176,11 @@ footer {
 .redes-sociales a:hover {
     text-decoration: underline;
 }
+
+/* Arreglo de tamaño de imágenes */
+img {
+    max-width: 100% !important;
+    max-height: 250px !important;
+    object-fit: cover !important;
+    border-radius: 8px;
+}
