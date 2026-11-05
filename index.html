@@ -6,20 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BioCapilar - Productos Orgánicos Capilares</title>
     <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Elemental Organic - Productos capilares orgánicos y naturales en Cali, Colombia.">
 </head>
 
 <body>
 
     <!-- Encabezado y Navegación -->
     <header>
-        <div class="logo">
-            <h1>Elemental organic 🌿</h1>
+        <div class="logo" style="display: flex; align-items: center; gap: 12px;">
+            <img src="img/logo.jpg" alt="Elemental Organic"
+                style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid white;">
+            <h1 style="margin: 0; font-size: 1.5rem;">Elemental organic 🌿</h1>
         </div>
         <nav>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#catalogo">Catálogo</a></li>
-                <li><a href="#recomendador">Test Capilar (IA)</a></li>
+                <li><a href="#test-capilar">Test Capilar (IA)</a></li>
                 <li><a href="#contacto">Contacto</a></li>
                 <li><a href="#admin">Admin</a></li>
             </ul>
@@ -35,80 +38,307 @@
     </section>
     <!-- Sección Catálogo de Productos -->
     <section id="catalogo" class="productos-section">
-        <h2>Nuestros Productos Orgánicos</h2>
-        <div class="productos-grid">
+        <!-- Sección Test Capilar IA -->
 
-            <!-- Producto 1 -->
-            <div class="producto-card">
-                <img src="img/shampoo.jpg" alt="Shampoo Natural Anticaída">
-                <h3>Shampoo Natural Anticaída</h3>
-                <p>Con romero y ortiga. Ayuda a fortalecer y reducir la caída del cabello desde la raíz.</p>
-                <span class="precio">$35.000</span>
-                <button class="btn-comprar">Comprar</button>
-            </div>
-
-            <!-- Producto 2 -->
-            <div class="producto-card">
-                <img src="img/acondicionador-letrero.jpg" alt="Acondicionador Fortalecedor">
+        <!-- Producto 1 -->
+        <div class="producto-card">
+            <img src="img/acondicionador-letrero.jpg" alt="Acondicionador Fortalecedor">
+            <div class="producto-info">
                 <h3>Acondicionador Fortalecedor</h3>
                 <p>Desenreda, suaviza y aporta hidratación profunda con ingredientes orgánicos.</p>
-                <span class="precio">$35.000</span>
-                <button class="btn-comprar">Comprar</button>
+                <div class="precio-comprar">
+                    <span class="precio">$35.000</span>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
             </div>
-
-            <!-- Producto 3 -->
-            <div class="producto-card">
-                <img src="img/tonico.jpg" alt="Tónico Capilar Anticaída">
-                <h3>Tónico Capilar Anticaída</h3>
-                <p>Aporta frescura e hidratación al cuero cabelludo para un crecimiento sano.</p>
-                <span class="precio">$30.000</span>
-                <button class="btn-comprar">Comprar</button>
-            </div>
-
-            <!-- Producto 4 -->
-            <div class="producto-card">
-                <img src="img/kit-girasoles.jpg" alt="Kit Girasoles Nutrición">
-                <h3>Kit Girasoles Nutrición</h3>
-                <p>Tratamiento intensivo con extractos botánicos para devolver el brillo y la vitalidad.</p>
-                <span class="precio">$85.000</span>
-                <button class="btn-comprar">Comprar</button>
-            </div>
-
-            <!-- Producto 5 -->
-            <div class="producto-card">
-                <img src="img/kit-jardin.jpg" alt="Kit Jardín Botánico">
-                <h3>Kit Jardín Botánico</h3>
-                <p>Línea especial formulada para la nutrición, reparación y suavidad capilar.</p>
-                <span class="precio">$88.000</span>
-                <button class="btn-comprar">Comprar</button>
-            </div>
-
-            <!-- Producto 6 -->
-            <div class="producto-card">
-                <img src="img/logo.jpg" alt="Kit Capilar Completo">
-                <h3>Kit Capilar Completo</h3>
-                <p>Incluye Shampoo, Acondicionador y Tónico para un cuidado natural e integral.</p>
-                <span class="precio">$90.000</span>
-                <button class="btn-comprar">Comprar</button>
-            </div>
-
-            <!-- Producto 7 -->
-            <div class="producto-card">
-                <img src="img/shampoo.jpg" alt="Mascarilla Reparadora">
-                <h3>Mascarilla Reparadora</h3>
-                <p>Nutrición profunda para reparar cabellos maltratados y reestructurar la hebra.</p>
-                <span class="precio">$40.000</span>
-                <button class="btn-comprar">Comprar</button>
-            </div>
-
-            <!-- Producto 8 -->
-            <div class="producto-card">
-                <img src="img/tonico.jpg" alt="Óleo Capilar Nutritivo">
-                <h3>Óleo Capilar Nutritivo</h3>
-                <p>Mezcla de aceites naturales para sellar puntas, controlar el frizz y dar brillo.</p>
-                <span class="precio">$28.000</span>
-                <button class="btn-comprar">Comprar</button>
-            </div>
+        </div>
 
         </div>
-    </section>
+
+        <!-- Producto 3 -->
+        <div class="producto-card">
+            <img src="img/tonico.jpg" alt="Tónico Capilar Anticaída">
+            <div class="producto-info">
+                <h3>Tónico Capilar Anticaída</h3>
+                <p>Aporta frescura e hidratación al cuero cabelludo para un crecimiento sano.</p>
+                <div class="precio-comprar">
+                    <span class="precio">$30.000</span>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="producto-card">
+            <img src="img/kit-girasoles.jpg" alt="Kit Girasoles Nutrición">
+            <div class="producto-info">
+                <h3>Kit Girasoles Nutrición</h3>
+                <p>Tratamiento intensivo con extractos botánicos para devolver el brillo y la vitalidad.</p>
+                <div class="precio-comprar">
+                    <span class="precio">$85.000</span>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Producto 5 -->
+        <div class="producto-card">
+            <img src="img/kit-jardin.jpg" alt="Kit Jardín Botánico">
+            <div class="producto-info">
+                <h3>Kit Jardín Botánico</h3>
+                <p>Línea especial formulada para la nutrición, reparación y suavidad capilar.</p>
+                <div class="precio-comprar">
+                    <span class="precio">$88.000</span>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Producto 6 -->
+        <div class="producto-card">
+            <img src="img/productos-bosque.jpg" alt="Kit Capilar Completo">
+            <div class="producto-info">
+                <h3>Kit Capilar Completo</h3>
+                <p>Incluye Shampoo, Acondicionador y Tónico para un cuidado natural e integral.</p>
+                <div class="precio-comprar">
+                    <span class="precio">$90.000</span>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Producto 7 -->
+        <div class="producto-card">
+            <img src="img/shampoo-letrero.jpg" alt="Mascarilla Reparadora">
+            <div class="producto-info">
+                <h3>Mascarilla Reparadora</h3>
+                <p>Nutrición profunda para reparar cabellos maltratados y reestructurar la hebra.</p>
+                <div class="precio-comprar">
+                    <span class="precio">$40.000</span>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Producto 8 -->
+        <div class="producto-card">
+            <img src="img/tonico-letrero.jpg" alt="Óleo Capilar Nutritivo">
+            <div class="producto-info">
+                <h3>Óleo Capilar Nutritivo</h3>
+                <p>Mezcla de aceites naturales para sellar puntas, controlar el frizz y dar brillo.</p>
+                <div class="precio-comprar">
+                    <span class="precio">$28.000</span>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+            </div>
+        </div>
+        </div><!-- Sección Test Capilar IA -->
+        <section id="test-capilar" class="test-container">
+            <h2>🧪 Test Capilar Personalizado (IA)</h2>
+            <p>Responde 3 preguntas rápidas y descubre la rutina natural ideal para tu cabello.</p>
+
+            <!-- Cuestionario Paso a Paso -->
+            <div id="cuestionario-capilar" class="quiz-box">
+                <!-- Paso 1 -->
+                <div class="step-card active" id="step-1">
+                    <h3>1. ¿Cuál es tu tipo de cabello?</h3>
+                    <div class="options-grid">
+                        <button class="opt-btn" onclick="seleccionarOpcion('tipo', 'Liso o Ondulado', 2)">
+                            <span>🌿</span> Liso u Ondulado
+                        </button>
+                        <button class="opt-btn" onclick="seleccionarOpcion('tipo', 'Rizado o Crespo', 2)">
+                            <span>🌀</span> Rizado o Crespo
+                        </button>
+                        <button class="opt-btn" onclick="seleccionarOpcion('tipo', 'Afro', 2)">
+                            <span>✨</span> Afro
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="step-card" id="step-2">
+                    <h3>2. ¿Cuál es tu mayor preocupación capilar?</h3>
+                    <div class="options-grid">
+                        <button class="opt-btn" onclick="seleccionarOpcion('meta', 'Caída y poco crecimiento', 3)">
+                            <span>🌱</span> Caída / Poco crecimiento
+                        </button>
+                        <button class="opt-btn" onclick="seleccionarOpcion('meta', 'Resequedad y Frizz', 3)">
+                            <span>💧</span> Resequedad y Frizz
+                        </button>
+                        <button class="opt-btn" onclick="seleccionarOpcion('meta', 'Daño por procesos químicos', 3)">
+                            <span>⚡</span> Daño químico o calor
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="step-card" id="step-3">
+                    <h3>3. ¿Cómo sientes tu cuero cabelludo?</h3>
+                    <div class="options-grid">
+                        <button class="opt-btn" onclick="finalizarTest('Graso')">
+                            <span>🍃</span> Tendencia a Graso
+                        </button>
+                        <button class="opt-btn" onclick="finalizarTest('Seco/Sensible')">
+                            <span>🌸</span> Seco o Sensible
+                        </button>
+                        <button class="opt-btn" onclick="finalizarTest('Normal')">
+                            <span>✨</span> Normal / Equilibrado
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Resultado -->
+                <div class="step-card" id="step-result" style="display:none;">
+                    <h3>✨ Tu Diagnóstico Capilar Personalizado</h3>
+                    <div id="diagnostico-contenido" class="result-box"></div>
+                    <a id="btn-pedir-wa" target="_blank" class="btn-wa">
+                        📲 Enviar diagnóstico y pedir por WhatsApp
+                    </a>
+                    <br>
+                    <button class="btn-reiniciar" onclick="reiniciarTest()">Repetir Test</button>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            let respuestas = {};
+
+            function seleccionarOpcion(clave, valor, siguientePaso) {
+                respuestas[clave] = valor;
+                document.querySelector('.step-card.active').classList.remove('active');
+                document.getElementById('step-' + siguientePaso).classList.add('active');
+            }
+
+            function finalizarTest(cueroCabelludo) {
+                respuestas['cuero'] = cueroCabelludo;
+                document.querySelector('.step-card.active').classList.remove('active');
+
+                const resDiv = document.getElementById('step-result');
+                const diagDiv = document.getElementById('diagnostico-contenido');
+                resDiv.style.display = 'block';
+
+                let recomendacion = "";
+                let productos = "";
+
+                if (respuestas.meta.includes("Caída")) {
+                    recomendacion = "Tu cabello necesita fortalecimiento desde la raíz y estimulación para el crecimiento sano.";
+                    productos = "• Shampoo Natural Anticaída ($35.000)\n• Tónico Capilar Anticaída ($30.000)";
+                } else if (respuestas.meta.includes("Resequedad")) {
+                    recomendacion = "Tu cabello requiere hidratación profunda para sellar la humedad y controlar el frizz.";
+                    productos = "• Acondicionador Fortalecedor ($35.000)\n• Óleo Capilar Nutritivo ($28.000)";
+                } else {
+                    recomendacion = "Requieres una nutrición intensiva y reparación orgánica para recuperar el brillo y la fibra capilar.";
+                    productos = "• Kit Girasoles Nutrición ($85.000)\n• Mascarilla Reparadora ($32.000)";
+                }
+
+                diagDiv.innerHTML = `
+            <p><strong>Tipo de Cabello:</strong> ${respuestas.tipo}</p>
+            <p><strong>Enfoque:</strong> ${respuestas.meta}</p>
+            <p><strong>Cuero Cabelludo:</strong> ${cueroCabelludo}</p>
+            <hr style="margin: 10px 0; border:0; border-top: 1px solid #ddd;">
+            <p><strong>Diagnóstico:</strong> ${recomendacion}</p>
+            <p><strong>Rutina Recomendada:</strong></p>
+            <pre style="font-family: inherit; white-space: pre-wrap;">${productos}</pre>
+        `;
+
+                const mensajeWA = encodeURIComponent(`¡Hola Elemental Organic! Hice el Test Capilar para mi cabello (${respuestas.tipo}) enfocado en (${respuestas.meta}) y me gustaría pedir estos productos:\n\n${productos}`);
+                document.getElementById('btn-pedir-wa').href = `https://wa.me/573000000000?text=${mensajeWA}`;
+            }
+
+            function reiniciarTest() {
+                respuestas = {};
+                document.getElementById('step-result').style.display = 'none';
+                document.getElementById('step-1').classList.add('active');
+            }
+        </script>
+        <!-- Sección Panel de Administración -->
+        <section id="admin" class="admin-section"
+            style="padding: 40px 20px; background-color: #f9f9f9; border-top: 2px solid #e2e2e2; margin-top: 40px;">
+            <div class="admin-container" style="max-width: 900px; margin: 0 auto; font-family: Arial, sans-serif;">
+                <h2 style="color: #2c3e50; text-align: center; margin-bottom: 5px;">Panel de Administración - Elemental
+                    Organic</h2>
+                <p class="admin-subtitle" style="text-align: center; color: #7f8c8d; margin-bottom: 30px;">Gestión
+                    rápida de inventario y solicitudes</p>
+
+                <!-- Tarjetas de Resumen (Dashboard) -->
+                <div class="admin-cards"
+                    style="display: flex; justify-content: space-between; gap: 15px; margin-bottom: 30px; flex-wrap: wrap;">
+                    <div class="card-metric"
+                        style="background: #ffffff; flex: 1; min-width: 200px; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: center; border-top: 4px solid #4caf50;">
+                        <h3 style="font-size: 0.9rem; color: #555; margin-bottom: 10px;">Total Productos</h3>
+                        <span class="metric-number"
+                            style="font-size: 1.8rem; font-weight: bold; color: #2c3e50;">8</span>
+                    </div>
+                    <div class="card-metric"
+                        style="background: #ffffff; flex: 1; min-width: 200px; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: center; border-top: 4px solid #4caf50;">
+                        <h3 style="font-size: 0.9rem; color: #555; margin-bottom: 10px;">Test Capilares Hoy</h3>
+                        <span class="metric-number"
+                            style="font-size: 1.8rem; font-weight: bold; color: #2c3e50;">12</span>
+                    </div>
+                    <div class="card-metric"
+                        style="background: #ffffff; flex: 1; min-width: 200px; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: center; border-top: 4px solid #4caf50;">
+                        <h3 style="font-size: 0.9rem; color: #555; margin-bottom: 10px;">Mensajes Contacto</h3>
+                        <span class="metric-number"
+                            style="font-size: 1.8rem; font-weight: bold; color: #2c3e50;">4</span>
+                    </div>
+                </div>
+
+                <!-- Tabla de Inventario de Productos -->
+                <div class="admin-table-wrapper"
+                    style="background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <h3 style="margin-bottom: 15px; color: #333;">Inventario de Catálogo</h3>
+                    <table class="admin-table" style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="background-color: #f4f4f4; color: #555;">
+                                <th style="padding: 12px; text-align: left; border-bottom: 1px solid #eee;">Producto
+                                </th>
+                                <th style="padding: 12px; text-align: left; border-bottom: 1px solid #eee;">Precio</th>
+                                <th style="padding: 12px; text-align: left; border-bottom: 1px solid #eee;">Estado</th>
+                                <th style="padding: 12px; text-align: left; border-bottom: 1px solid #eee;">Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 12px; border-bottom: 1px solid #eee;">Acondicionador Fortalecedor
+                                </td>
+                                <td style="padding: 12px; border-bottom: 1px solid #eee;">$35.000</td>
+                                <td style="padding: 12px; border-bottom: 1px solid #eee;"><span
+                                        style="background-color: #e8f5e9; color: #2e7d32; padding: 4px 8px; border-radius: 6px; font-size: 0.85rem; font-weight: bold;">Disponible</span>
+                                </td>
+                                <td style="padding: 12px; border-bottom: 1px solid #eee;"><button
+                                        style="background-color: #3498db; color: white; border: none; padding: 6px 12px; border-radius: 5px; cursor: pointer;">Editar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px; border-bottom: 1px solid #eee;">Tónico Capilar Anticaída</td>
+                                <td style="padding: 12px; border-bottom: 1px solid #eee;">$30.000</td>
+                                <td style="padding: 12px; border-bottom: 1px solid #eee;"><span
+                                        style="background-color: #e8f5e9; color: #2e7d32; padding: 4px 8px; border-radius: 6px; font-size: 0.85rem; font-weight: bold;">Disponible</span>
+                                </td>
+                                <td style="padding: 12px; border-bottom: 1px solid #eee;"><button
+                                        style="background-color: #3498db; color: white; border: none; padding: 6px 12px; border-radius: 5px; cursor: pointer;">Editar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <!-- Sección de Contacto -->
+        <section id="contacto" class="contacto-section"
+            style="padding: 40px 20px; text-align: center; background-color: #f9f9f9;">
+            <h2>Contáctanos</h2>
+            <p>¿Tienes dudas sobre tu cabello o nuestros productos orgánicos? ¡Escríbenos!</p>
+            <div style="margin-top: 20px;">
+                <p><strong>Ubicación:</strong> Cali, Colombia</p>
+                <p><strong>Correo:</strong> elemental.organic@gmail.com</p>
+                <p><strong>Teléfono:</strong> 317 408 20 24</p>
+                <a href="https://wa.me/573174082024" target="_blank"
+                    style="display: inline-block; background-color: #25d366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 10px;">Chatear
+                    por WhatsApp</a>
+            </div>
+        </section>
+
+</body>
+
+</html>

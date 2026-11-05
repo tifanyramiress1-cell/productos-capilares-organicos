@@ -184,3 +184,181 @@ img {
     object-fit: cover !important;
     border-radius: 8px;
 }
+
+/* Estilos para el Test Capilar */
+.test-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px 20px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.test-container h2 {
+    color: #2d4a3e;
+    margin-bottom: 8px;
+}
+
+.quiz-box {
+    margin-top: 25px;
+}
+
+.step-card {
+    display: none;
+}
+
+.step-card.active {
+    display: block;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.opt-btn {
+    background: #f4f7f4;
+    border: 2px solid #d1e2d7;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.opt-btn:hover {
+    background: #2d4a3e;
+    color: #ffffff;
+    border-color: #2d4a3e;
+}
+
+.result-box {
+    background: #f9fbf9;
+    border: 1px solid #c3dbc9;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.btn-wa {
+    display: inline-block;
+    background-color: #25d366;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.btn-reiniciar {
+    background: none;
+    border: none;
+    color: #666;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* Cuadrícula organizada del catálogo */
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
+}
+
+/* Tarjeta de producto uniforme */
+.producto-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Tamaño estándar y perfecto para TODAS las fotos */
+.producto-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+/* Información y párrafos alineados */
+.producto-info {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.producto-info h3 {
+    margin: 0 0 8px 0;
+    color: #2c4c38;
+    font-size: 1.1rem;
+}
+
+.producto-info p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+/* Contenedor de precio y botón abajo */
+.precio-comprar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.precio {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #2c4c38;
+}
+
+.btn-comprar {
+    background-color: #2c4c38;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.btn-comprar:hover {
+    background-color: #3d684d;
+}
+
+/* Tamaño ideal y ordenado para las imágenes del catálogo */
+.productos-section img {
+    width: 250px !important;
+    height: 250px !important;
+    object-fit: cover !important;
+    border-radius: 12px;
+    display: block;
+    margin: 15px auto;
+}
