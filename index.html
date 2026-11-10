@@ -10,6 +10,33 @@
 </head>
 
 <body>
+    <!-- Chatbot Flotante Elemental Organic -->
+    <div id="chatbot-container"
+        style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; font-family: sans-serif;">
+        <button id="chatbot-toggle"
+            style="background-color: #4A704C; color: white; border: none; border-radius: 50px; padding: 12px 20px; cursor: pointer; font-weight: bold; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">💬
+            Asistente IA</button>
+
+        <div id="chatbot-box"
+            style="display: none; width: 300px; height: 350px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); flex-direction: column; overflow: hidden; margin-bottom: 10px;">
+            <div
+                style="background: #4A704C; color: white; padding: 10px; font-weight: bold; display: flex; justify-content: space-between;">
+                <span>Elemental Bot 🌿</span>
+                <button id="chatbot-close"
+                    style="background: none; border: none; color: white; cursor: pointer; font-weight: bold;">X</button>
+            </div>
+            <div id="chatbot-messages" style="flex: 1; padding: 10px; overflow-y: auto; font-size: 14px; color: #333;">
+                <p style="background: #e5f2e5; padding: 8px; border-radius: 8px; margin: 5px 0;">¡Hola! 🍃 Soy el
+                    asistente virtual de Elemental Organic. ¿En qué te puedo ayudar hoy con tu cabello?</p>
+            </div>
+            <div style="display: flex; border-top: 1px solid #ddd;">
+                <input type="text" id="chatbot-input" placeholder="Escribe tu duda..."
+                    style="flex: 1; border: none; padding: 10px; outline: none; font-size: 13px;">
+                <button id="chatbot-send"
+                    style="background: #4A704C; color: white; border: none; padding: 10px; cursor: pointer;">Enviar</button>
+            </div>
+        </div>
+    </div>
     <script>
         const toggleBtn = document.getElementById('chatbot-toggle');
         const closeBtn = document.getElementById('chatbot-close');
@@ -34,7 +61,6 @@
             }, 1000);
         };
     </script>
-
     <script>
         const toggleBtn = document.getElementById('chatbot-toggle');
         const closeBtn = document.getElementById('chatbot-close');
