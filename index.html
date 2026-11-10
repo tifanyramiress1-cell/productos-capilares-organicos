@@ -10,6 +10,55 @@
 </head>
 
 <body>
+    <script>
+        const toggleBtn = document.getElementById('chatbot-toggle');
+        const closeBtn = document.getElementById('chatbot-close');
+        const chatBox = document.getElementById('chatbot-box');
+        const sendBtn = document.getElementById('chatbot-send');
+        const inputField = document.getElementById('chatbot-input');
+        const messagesContainer = document.getElementById('chatbot-messages');
+
+        toggleBtn.onclick = () => { chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex'; toggleBtn.style.display = 'none'; };
+        closeBtn.onclick = () => { chatBox.style.display = 'none'; toggleBtn.style.display = 'block'; };
+
+        sendBtn.onclick = () => {
+            let text = inputField.value.trim();
+            if (text === '') return;
+
+            messagesContainer.innerHTML += `<p style="text-align: right; background: #d0e8d0; padding: 8px; border-radius: 8px; margin: 5px 0;">${text}</p>`;
+            inputField.value = '';
+
+            setTimeout(() => {
+                messagesContainer.innerHTML += `<p style="background: #e5f2e5; padding: 8px; border-radius: 8px; margin: 5px 0;">Gracias por tu consulta sobre nuestros productos orgánicos capilares. Un asesor te contactará pronto o puedes revisar nuestro catálogo. ✨</p>`;
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }, 1000);
+        };
+    </script>
+
+    <script>
+        const toggleBtn = document.getElementById('chatbot-toggle');
+        const closeBtn = document.getElementById('chatbot-close');
+        const chatBox = document.getElementById('chatbot-box');
+        const sendBtn = document.getElementById('chatbot-send');
+        const inputField = document.getElementById('chatbot-input');
+        const messagesContainer = document.getElementById('chatbot-messages');
+
+        toggleBtn.onclick = () => { chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex'; toggleBtn.style.display = 'none'; };
+        closeBtn.onclick = () => { chatBox.style.display = 'none'; toggleBtn.style.display = 'block'; };
+
+        sendBtn.onclick = () => {
+            let text = inputField.value.trim();
+            if (text === '') return;
+
+            messagesContainer.innerHTML += `<p style="text-align: right; background: #d0e8d0; padding: 8px; border-radius: 8px; margin: 5px 0;">${text}</p>`;
+            inputField.value = '';
+
+            setTimeout(() => {
+                messagesContainer.innerHTML += `<p style="background: #e5f2e5; padding: 8px; border-radius: 8px; margin: 5px 0;">Gracias por tu consulta sobre nuestros productos orgánicos capilares. Un asesor te contactará pronto o puedes revisar nuestro catálogo. ✨</p>`;
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }, 1000);
+        };
+    </script>
 
     <!-- Encabezado y Navegación -->
     <header>
