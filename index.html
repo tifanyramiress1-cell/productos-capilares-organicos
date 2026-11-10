@@ -52,13 +52,35 @@
             let text = inputField.value.trim();
             if (text === '') return;
 
+            // Muestra el mensaje del usuario
             messagesContainer.innerHTML += `<p style="text-align: right; background: #d0e8d0; padding: 8px; border-radius: 8px; margin: 5px 0;">${text}</p>`;
+            let userInput = text.toLowerCase();
             inputField.value = '';
 
+            // Lógica precisa para respuestas exactas de Elemental Organic
             setTimeout(() => {
-                messagesContainer.innerHTML += `<p style="background: #e5f2e5; padding: 8px; border-radius: 8px; margin: 5px 0;">Gracias por tu consulta sobre nuestros productos orgánicos capilares. Un asesor te contactará pronto o puedes revisar nuestro catálogo. ✨</p>`;
+                let botReply = "🌿 En Elemental Organic nos especializamos en cuidado capilar natural. ¿Te refieres a nuestro champú de romero, tónico anticaída o aceite nutritivo?";
+
+                // Pregunta exacta sobre raíz grasa y puntas secas
+                if ((userInput.includes('graso') || userInput.includes('grasa') || userInput.includes('raiz')) && (userInput.includes('seco') || userInput.includes('seca') || userInput.includes('punta'))) {
+                    botReply = "✨ Sí. Cuando la raíz es grasa y las puntas secas, se trata de un **cabello mixto**. La recomendación experta es aplicar el champú purificante solo en el cuero cabelludo y el tratamiento hidratante únicamente de medios a puntas para equilibrar la hebra.";
+                }
+                // Pregunta sobre caída
+                else if (userInput.includes('caida') || userInput.includes('caída') || userInput.includes('se cae') || userInput.includes('fortalecer')) {
+                    botReply = "💧 Para la caída capilar contamos con nuestro tónico fortificante a base de quina y romero, diseñado para aplicarse directamente en la raíz mediante masajes circulares y estimular el crecimiento.";
+                }
+                // Pregunta sobre precios, catálogo o compra
+                else if (userInput.includes('precio') || userInput.includes('catalogo') || userInput.includes('comprar') || userInput.includes('productos')) {
+                    botReply = "🛍️ Todos nuestros precios, descripciones e ingredientes 100% orgánicos están disponibles en la sección de **Catálogo** de nuestra página web.";
+                }
+                // Pregunta de contacto o asesoría
+                else if (userInput.includes('contacto') || userInput.includes('asesor') || userInput.includes('hablar')) {
+                    botReply = "📞 Puedes enviarnos tus requerimientos directamente desde el formulario en la sección de **Contacto** de este sitio web.";
+                }
+
+                messagesContainer.innerHTML += `<p style="background: #e5f2e5; padding: 8px; border-radius: 8px; margin: 5px 0;">${botReply}</p>`;
                 messagesContainer.scrollTop = messagesContainer.scrollHeight;
-            }, 1000);
+            }, 800);
         };
     </script>
     <script>
