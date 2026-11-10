@@ -53,29 +53,36 @@
             let text = inputField.value.trim();
             if (text === '') return;
 
-            // Muestra el mensaje del usuario alineado a la derecha
             messagesContainer.innerHTML += `<p style="text-align: right; background: #d0e8d0; padding: 8px; border-radius: 8px; margin: 5px 0;">${text}</p>`;
             let q = text.toLowerCase();
             inputField.value = '';
 
-            // Simulación inteligente y fluida tipo ChatGPT
             setTimeout(() => {
-                let botReply = "Entiendo perfectamente tu consulta sobre el cuidado capilar. En Elemental Organic formulamos cada producto con ingredientes 100% naturales para devolverle la vida a tu cabello. ¿Te gustaría saber más sobre nuestros componentes o prefieres que te recomiende un kit específico?";
+                let botReply = "🌿 En Elemental Organic nos encanta ayudarte a cuidar tu cabello de forma natural. ¿Te gustaría conocer nuestros precios, los ingredientes de los kits o tienes alguna duda específica?";
 
-                if (q.includes('enfocan') || q.includes('sirven') || q.includes('para qué') || q.includes('caracterizan')) {
-                    botReply = "🌿 Nuestros productos de **Elemental Organic** se enfocan en la nutrición profunda y la restauración capilar sin químicos agresivos. El champú limpia y revitaliza el folículo, el tónico previene la caída estimulando el crecimiento, y el aceite sella e hidrata las puntas secas.";
+                // Si pregunta por romero o ingredientes
+                if (q.includes('romero') || q.includes('ingrediente') || q.includes('natural') || q.includes('contenga')) {
+                    botReply = "🌱 ¡Sí! Nuestro champú y tónico estrella contienen extracto puro de romero orgánico, el cual estimula la circulación en el folículo piloso, acelera el crecimiento y controla la caspa de forma totalmente natural.";
                 }
+                // Si dice que sí o quiere un kit específico
+                else if (q.includes('si') || q.includes('sí') || q.includes('kit') || q.includes('específico') || q.includes('recomiéndame') || q.includes('recomiendas')) {
+                    botReply = "🎁 ¡Perfecto! Tenemos el **Kit Crecimiento Total** (champú de romero + tónico) y el **Kit Nutrición Profunda** (con aceite de argán y aguacate). ¿Cuál de los dos te llama más la atención?";
+                }
+                // Si pregunta por raíz grasa o puntas secas
                 else if ((q.includes('graso') || q.includes('grasa') || q.includes('raíz') || q.includes('raiz')) && (q.includes('seco') || q.includes('seca') || q.includes('punta'))) {
-                    botReply = "✨ ¡Claro! Para un cabello mixto (raíz grasa y puntas secas), lo ideal es aplicar el champú purificante únicamente en el cuero cabelludo dando suaves masajes, y el tratamiento hidratante de medios a puntas. Así controlas el exceso de sebo sin resecar la hebra.";
+                    botReply = "✨ Para un cabello mixto (raíz grasa y puntas secas), aplica nuestro champú purificante solo en el cuero cabelludo y el tratamiento hidratante únicamente en las puntas. ¡Quedará equilibrado y brillante!";
                 }
-                else if (q.includes('shampoo') || q.includes('champú') || q.includes('recomiendas') || q.includes('recomienda')) {
-                    botReply = "🧴 Te recomendamos nuestro champú artesanal de romero y menta si buscas estimular el crecimiento y controlar la grasa, o nuestra línea nutritiva si tu cabello necesita hidratación profunda. ¿Cuál es tu principal necesidad actual?";
+                // Si pregunta por caída
+                else if (q.includes('caida') || q.includes('caída') || q.includes('se cae') || q.includes('debil')) {
+                    botReply = "💧 Para frenar la caída, nuestro tónico fortificante es infalible. Se aplica en la raíz con suaves masajes todas las noches sin necesidad de enjuagar.";
                 }
-                else if (q.includes('caida') || q.includes('caída') || q.includes('crecer') || q.includes('crecimiento')) {
-                    botReply = "💧 Para la caída y estimular el crecimiento, nuestro tónico capilar a base de extractos naturales es excelente. Se aplica directamente en la raíz con el cabello limpio para fortalecer el folículo piloso.";
+                // Si pregunta por adicionar o comprar
+                else if (q.includes('adicionar') || q.includes('agregar') || q.includes('comprar') || q.includes('pagar')) {
+                    botReply = "🛍️ ¡Claro que puedes adicionar productos a tu carrito! Solo ve a la sección de **Catálogo**, selecciona tus favoritos y realiza tu pedido de forma segura.";
                 }
-                else if (q.includes('hola') || q.includes('saludos') || q.includes('buenas')) {
-                    botReply = "¡Hola! 🍃 Qué gusto saludarte. Soy el asistente inteligente de Elemental Organic. Cuéntame, ¿cómo es tu tipo de cabello o qué producto te gustaría conocer hoy?";
+                // Saludos generales
+                else if (q.includes('hola') || q.includes('buenas') || q.includes('saludos')) {
+                    botReply = "¡Hola! 🍃 Qué alegría saludarte. Cuéntame, ¿cómo es tu tipo de cabello o qué te gustaría mejorar hoy?";
                 }
 
                 messagesContainer.innerHTML += `<p style="background: #e5f2e5; padding: 8px; border-radius: 8px; margin: 5px 0;">${botReply}</p>`;
