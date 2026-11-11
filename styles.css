@@ -366,3 +366,32 @@ img {
 }
 
 /* Optimización general de estilos y responsividad */
+/* --- Corrección Responsiva para Celulares --- */
+@media screen and (max-width: 768px) {
+
+    body,
+    html {
+        overflow-x: hidden;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    header,
+    nav {
+        flex-direction: column;
+        padding: 10px;
+        text-align: center;
+    }
+
+    nav a,
+    .nav-links {
+        font-size: 14px;
+        margin: 4px 6px;
+    }
+
+    .producto-card {
+        width: 90% !important;
+        margin: 10px auto;
+    }
+}
