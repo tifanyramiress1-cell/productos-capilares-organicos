@@ -499,11 +499,11 @@
                     </form>
                 </div>
 
-                <!-- VISTA 2: Confirmación con botón para notificar al WhatsApp -->
+                <!-- VISTA 2: Confirmación con el botón directo al WhatsApp de tu mamá -->
                 <div id="checkout-view-success" style="display: none; text-align: center;">
                     <div style="font-size: 45px; color: #4A704C; margin-bottom: 5px;">✅</div>
                     <h3 style="color: #4A704C; margin-top: 0; margin-bottom: 5px;">¡Pedido Confirmado!</h3>
-                    <p style="font-size: 12px; color: #777; margin-bottom: 15px;">Notifica tu compra directamente al WhatsApp de Elemental Organic 🌿</p>
+                    <p style="font-size: 12px; color: #777; margin-bottom: 15px;">Haz clic para notificar la compra al WhatsApp de Elemental Organic 🌿</p>
                     
                     <div style="background: #f9f9f9; border: 1px dashed #4A704C; border-radius: 8px; padding: 12px; text-align: left; font-size: 13px; margin-bottom: 15px; color: #333;">
                         <p style="margin: 4px 0;"><strong>Orden #:</strong> <span id="summary-order-id"></span></p>
@@ -513,8 +513,8 @@
                         <p style="margin: 4px 0;"><strong>Pago:</strong> <span id="summary-payment"></span></p>
                     </div>
 
-                    <!-- Botón que abre WhatsApp con el mensaje prediseñado -->
-                    <a id="whatsapp-notify-btn" href="#" target="_blank" style="display: block; background-color: #25D366; color: white; text-decoration: none; padding: 12px; border-radius: 6px; font-weight: bold; font-size: 14px; text-align: center; margin-bottom: 8px;">📲 Enviar pedido por WhatsApp</a>
+                    <!-- Botón configurado con el número de tu mamá (573143174084) -->
+                    <a id="whatsapp-notify-btn" href="#" target="_blank" style="display: block; background-color: #25D366; color: white; text-decoration: none; padding: 12px; border-radius: 6px; font-weight: bold; font-size: 14px; text-align: center; margin-bottom: 8px;">📲 Notificar pedido al WhatsApp</a>
                     <button id="finish-purchase-btn" style="background: none; border: none; color: #666; font-size: 12px; cursor: pointer; text-decoration: underline;">Cerrar ventana</button>
                 </div>
 
@@ -565,24 +565,21 @@
         let address = document.getElementById('buyer-address').value;
         let payment = document.getElementById('payment-method').value;
 
-        // Generar número de orden aleatorio
         let orderId = 'EO-' + Math.floor(100000 + Math.random() * 900000);
 
-        // Llenar resumen en la tarjeta
         document.getElementById('summary-order-id').textContent = orderId;
         document.getElementById('summary-name').textContent = name;
         document.getElementById('summary-product').textContent = productoSeleccionado;
         document.getElementById('summary-address').textContent = address;
         document.getElementById('summary-payment').textContent = payment;
 
-        // Crear mensaje formateado para WhatsApp
-        let mensajeWhatsApp = `¡Hola Elemental Organic! 🌿 Acabo de realizar una compra:\n\n*Orden:* ${orderId}\n*Cliente:* ${name}\n*Producto:* ${productoSeleccionado}\n*Dirección:* ${address}\n*Método de pago:* ${payment}\n\nQuedo atenta a la confirmación de mi envío. ¡Gracias! ✨`;
+        // Mensaje detallado para el WhatsApp de tu mamá
+        let mensajeWhatsApp = `¡Hola Elemental Organic! 🌿 Hay un nuevo pedido en la web:\n\n*Orden:* ${orderId}\n*Cliente:* ${name}\n*Producto:* ${productoSeleccionado}\n*Dirección:* ${address}\n*Método de pago:* ${payment}\n\n¡Por favor procesar el envío! ✨`;
 
-        // Codificar el texto para la URL de WhatsApp (número de ejemplo de contacto, cámbialo si tienes uno específico)
-        let numeroWhatsApp = "573134082624";
-        whatsappBtn.href = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensajeWhatsApp)}`;
+        // Número de tu mamá con el indicativo de Colombia (57)
+        let numeroMamá = "573143174084";
+        whatsappBtn.href = `https://wa.me/${numeroMamá}?text=${encodeURIComponent(mensajeWhatsApp)}`;
 
-        // Cambiar a la vista de éxito
         viewForm.style.display = 'none';
         viewSuccess.style.display = 'block';
         checkoutForm.reset();
