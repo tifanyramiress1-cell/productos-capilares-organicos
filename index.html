@@ -466,34 +466,57 @@
 
 </body>
 <script>
-    // 1. Crear el contenedor HTML del Modal de Pago con diseño limpio y organizado
+    // 1. Crear el contenedor HTML del Modal de Pago y la Confirmación de Pedido
     const modalHTML = `
         <div id="checkout-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 3000; justify-content: center; align-items: center; font-family: sans-serif;">
-            <div style="background: white; width: 90%; max-width: 380px; padding: 20px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); position: relative;">
+            <div style="background: white; width: 90%; max-width: 400px; padding: 25px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); position: relative;">
                 <button id="close-modal" style="position: absolute; top: 12px; right: 15px; background: none; border: none; font-size: 20px; cursor: pointer; font-weight: bold; color: #666;">✕</button>
-                <h3 style="color: #4A704C; margin-top: 0; margin-bottom: 10px; text-align: center; font-size: 18px;">🛍️ Finalizar tu Compra</h3>
-                <p id="modal-producto-nombre" style="font-weight: bold; color: #333; margin-bottom: 15px; font-size: 14px; text-align: center; background: #f4f4f4; padding: 8px; border-radius: 6px;"></p>
                 
-                <form id="checkout-form" style="display: flex; flex-direction: column; gap: 12px;">
-                    <div style="display: flex; flex-direction: column; text-align: left;">
-                        <label style="font-size: 12px; font-weight: bold; color: #444; margin-bottom: 4px;">Nombre completo:</label>
-                        <input type="text" id="buyer-name" required placeholder="Tu nombre" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 13px;">
+                <!-- VISTA 1: Formulario de Pago -->
+                <div id="checkout-view-form">
+                    <h3 style="color: #4A704C; margin-top: 0; margin-bottom: 10px; text-align: center; font-size: 18px;">🛍️ Finalizar tu Compra</h3>
+                    <p id="modal-producto-nombre" style="font-weight: bold; color: #333; margin-bottom: 15px; font-size: 14px; text-align: center; background: #f4f4f4; padding: 8px; border-radius: 6px;"></p>
+                    
+                    <form id="checkout-form" style="display: flex; flex-direction: column; gap: 12px;">
+                        <div style="display: flex; flex-direction: column; text-align: left;">
+                            <label style="font-size: 12px; font-weight: bold; color: #444; margin-bottom: 4px;">Nombre completo:</label>
+                            <input type="text" id="buyer-name" required placeholder="Tu nombre" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 13px;">
+                        </div>
+                        <div style="display: flex; flex-direction: column; text-align: left;">
+                            <label style="font-size: 12px; font-weight: bold; color: #444; margin-bottom: 4px;">Dirección de envío (Cali):</label>
+                            <input type="text" id="buyer-address" required placeholder="Ej: Calle 5 # 38-02" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 13px;">
+                        </div>
+                        <div style="display: flex; flex-direction: column; text-align: left;">
+                            <label style="font-size: 12px; font-weight: bold; color: #444; margin-bottom: 4px;">Método de Pago:</label>
+                            <select id="payment-method" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; background: white; box-sizing: border-box; font-size: 13px;">
+                                <option value="Nequi 💜">Nequi 💜</option>
+                                <option value="Tarjeta de Crédito / Débito 💳">Tarjeta de Crédito / Débito 💳</option>
+                                <option value="PSE 🏦">PSE (Pagos Seguros en Línea) 🏦</option>
+                                <option value="Pago Contra Entrega 📦">Pago Contra Entrega 📦</option>
+                            </select>
+                        </div>
+                        <button type="submit" style="background-color: #4A704C; color: white; border: none; padding: 10px; border-radius: 6px; font-weight: bold; cursor: pointer; margin-top: 10px; width: 100%; font-size: 14px;">Confirmar y Pagar</button>
+                    </form>
+                </div>
+
+                <!-- VISTA 2: Confirmación / Factura del Pedido estilo E-Commerce -->
+                <div id="checkout-view-success" style="display: none; text-align: center;">
+                    <div style="font-size: 45px; color: #4A704C; margin-bottom: 5px;">✅</div>
+                    <h3 style="color: #4A704C; margin-top: 0; margin-bottom: 5px;">¡Pedido Confirmado!</h3>
+                    <p style="font-size: 12px; color: #777; margin-bottom: 15px;">Gracias por tu compra en Elemental Organic 🌿</p>
+                    
+                    <div style="background: #f9f9f9; border: 1px dashed #4A704C; border-radius: 8px; padding: 12px; text-align: left; font-size: 13px; margin-bottom: 15px; color: #333;">
+                        <p style="margin: 4px 0;"><strong>Orden #:</strong> <span id="summary-order-id"></span></p>
+                        <p style="margin: 4px 0;"><strong>Cliente:</strong> <span id="summary-name"></span></p>
+                        <p style="margin: 4px 0;"><strong>Producto:</strong> <span id="summary-product"></span></p>
+                        <p style="margin: 4px 0;"><strong>Dirección:</strong> <span id="summary-address"></span></p>
+                        <p style="margin: 4px 0;"><strong>Método de pago:</strong> <span id="summary-payment"></span></p>
+                        <p style="margin: 4px 0; color: #4A704C; font-weight: bold;"><strong>Estado:</strong> En preparación 🚚</p>
                     </div>
-                    <div style="display: flex; flex-direction: column; text-align: left;">
-                        <label style="font-size: 12px; font-weight: bold; color: #444; margin-bottom: 4px;">Dirección de envío (Cali):</label>
-                        <input type="text" id="buyer-address" required placeholder="Ej: Calle 5 # 38-02" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 13px;">
-                    </div>
-                    <div style="display: flex; flex-direction: column; text-align: left;">
-                        <label style="font-size: 12px; font-weight: bold; color: #444; margin-bottom: 4px;">Método de Pago:</label>
-                        <select id="payment-method" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; background: white; box-sizing: border-box; font-size: 13px;">
-                            <option value="Nequi">Nequi 💜</option>
-                            <option value="Tarjeta">Tarjeta de Crédito / Débito 💳</option>
-                            <option value="PSE">PSE (Pagos Seguros en Línea) 🏦</option>
-                            <option value="Contra Entrega">Pago Contra Entrega 📦</option>
-                        </select>
-                    </div>
-                    <button type="submit" style="background-color: #4A704C; color: white; border: none; padding: 10px; border-radius: 6px; font-weight: bold; cursor: pointer; margin-top: 10px; width: 100%; font-size: 14px;">Confirmar y Pagar</button>
-                </form>
+
+                    <button id="finish-purchase-btn" style="background-color: #4A704C; color: white; border: none; padding: 10px 18px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%;">Seguir Comprando</button>
+                </div>
+
             </div>
         </div>
     `;
@@ -504,6 +527,10 @@
     const closeModal = document.getElementById('close-modal');
     const modalProductoNombre = document.getElementById('modal-producto-nombre');
     const checkoutForm = document.getElementById('checkout-form');
+    const viewForm = document.getElementById('checkout-view-form');
+    const viewSuccess = document.getElementById('checkout-view-success');
+    const finishBtn = document.getElementById('finish-purchase-btn');
+
     let productoSeleccionado = "";
 
     const botonesComprar = document.querySelectorAll('.btn-comprar');
@@ -521,6 +548,8 @@
             }
 
             modalProductoNombre.textContent = `📦 Producto: ${productoSeleccionado}`;
+            viewForm.style.display = 'block';
+            viewSuccess.style.display = 'none';
             modal.style.display = 'flex';
         });
     });
@@ -531,11 +560,27 @@
     checkoutForm.onsubmit = (e) => {
         e.preventDefault();
         let name = document.getElementById('buyer-name').value;
+        let address = document.getElementById('buyer-address').value;
         let payment = document.getElementById('payment-method').value;
 
-        modal.style.display = 'none';
-        alert(`🎉 ¡Compra exitosa, ${name}!\n\nTu pedido de "${productoSeleccionado}" ha sido procesado mediante ${payment}.\n¡Gracias por elegir Elemental Organic! 🌿✨`);
+        // Generar número de orden aleatorio
+        let orderId = 'EO-' + Math.floor(100000 + Math.random() * 900000);
+
+        // Llenar resumen de factura
+        document.getElementById('summary-order-id').textContent = orderId;
+        document.getElementById('summary-name').textContent = name;
+        document.getElementById('summary-product').textContent = productoSeleccionado;
+        document.getElementById('summary-address').textContent = address;
+        document.getElementById('summary-payment').textContent = payment;
+
+        // Cambiar vista del modal
+        viewForm.style.display = 'none';
+        viewSuccess.style.display = 'block';
         checkoutForm.reset();
+    };
+
+    finishBtn.onclick = () => {
+        modal.style.display = 'none';
     };
 </script>
 
