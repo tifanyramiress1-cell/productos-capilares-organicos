@@ -376,6 +376,45 @@ img {
         margin: 0 !important;
         padding: 0 !important;
     }
+}
+
+/* <-- Aquí cierra la llave de la línea 378 */
+
+/* --- Ajuste responsive para el Panel Admin y la Tabla --- */
+.admin-section,
+.contacto-section {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 20px 10px !important;
+}
+
+.admin-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 5px !important;
+    box-sizing: border-box !important;
+}
+
+.admin-section div[style*="display: flex"] {
+    flex-direction: column !important;
+}
+
+.admin-table-wrapper {
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px !important;
+    box-sizing: border-box !important;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 8px 6px !important;
+    font-size: 13px !important;
+}
+
+/* Asegurar que el contenedor principal o header */
+header {
 
     /* Asegurar que el contenedor principal o header no empuje la pantalla */
     header {
