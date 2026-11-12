@@ -377,40 +377,38 @@
             }
         </script>
         <!-- Sección Panel de Administración -->
-        <section id="admin" class="admin-section"
-            style="padding: 40px 20px; background-color: #f9f9f9; border-top: 2px solid #e2e2e2; margin-top: 40px;">
+        <!-- Sección del Panel de Administración e Inventario -->
+        <section id="admin" class="admin-section" style="padding: 40px 20px; background-color: #f4f6f8;">
             <div class="admin-container" style="max-width: 900px; margin: 0 auto; font-family: Arial, sans-serif;">
-                <h2 style="color: #2c3e50; text-align: center; margin-bottom: 5px;">Panel de Administración - Elemental
-                    Organic</h2>
-                <p class="admin-subtitle" style="text-align: center; color: #7f8c8d; margin-bottom: 30px;">Gestión
-                    rápida de inventario y solicitudes</p>
 
-                <!-- Tarjetas de Resumen (Dashboard) -->
-                <div class="admin-cards"
+                <h2 style="text-align: center; color: #333; margin-bottom: 5px;">Panel de Administración - Elemental
+                    Organic</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 25px;">Gestión rápida de inventario y
+                    solicitudes</p>
+
+                <!-- Tarjetas de Métricas -->
+                <div
                     style="display: flex; justify-content: space-between; gap: 15px; margin-bottom: 30px; flex-wrap: wrap;">
-                    <div class="card-metric"
-                        style="background: #ffffff; flex: 1; min-width: 200px; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: center; border-top: 4px solid #4caf50;">
-                        <h3 style="font-size: 0.9rem; color: #555; margin-bottom: 10px;">Total Productos</h3>
-                        <span class="metric-number"
-                            style="font-size: 1.8rem; font-weight: bold; color: #2c3e50;">8</span>
+                    <div
+                        style="background: #ffffff; padding: 20px; border-radius: 10px; flex: 1; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <div style="font-size: 14px; color: #666; margin-bottom: 5px;">Total Productos</div>
+                        <span style="font-size: 1.8rem; font-weight: bold; color: #2c3e50;">8</span>
                     </div>
-                    <div class="card-metric"
-                        style="background: #ffffff; flex: 1; min-width: 200px; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: center; border-top: 4px solid #4caf50;">
-                        <h3 style="font-size: 0.9rem; color: #555; margin-bottom: 10px;">Test Capilares Hoy</h3>
-                        <span class="metric-number"
-                            style="font-size: 1.8rem; font-weight: bold; color: #2c3e50;">12</span>
+                    <div
+                        style="background: #ffffff; padding: 20px; border-radius: 10px; flex: 1; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <div style="font-size: 14px; color: #666; margin-bottom: 5px;">Test Capilares Hoy</div>
+                        <span style="font-size: 1.8rem; font-weight: bold; color: #2c3e50;">12</span>
                     </div>
-                    <div class="card-metric"
-                        style="background: #ffffff; flex: 1; min-width: 200px; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: center; border-top: 4px solid #4caf50;">
-                        <h3 style="font-size: 0.9rem; color: #555; margin-bottom: 10px;">Mensajes Contacto</h3>
-                        <span class="metric-number"
-                            style="font-size: 1.8rem; font-weight: bold; color: #2c3e50;">4</span>
+                    <div
+                        style="background: #ffffff; padding: 20px; border-radius: 10px; flex: 1; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                        <div style="font-size: 14px; color: #666; margin-bottom: 5px;">Mensajes Contacto</div>
+                        <span style="font-size: 1.8rem; font-weight: bold; color: #2c3e50;">4</span>
                     </div>
                 </div>
 
-                <!-- Tabla de Inventario de Productos -->
+                <!-- Tabla de Inventario de Catálogo -->
                 <div class="admin-table-wrapper"
-                    style="background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 20px;">
+                    style="background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
                     <h3 style="margin-bottom: 15px; color: #333;">Inventario de Catálogo</h3>
                     <table class="admin-table" style="width: 100%; border-collapse: collapse;">
                         <thead>
@@ -479,19 +477,26 @@
                                 </td>
                             </tr>
                         </tbody>
+                    </table>
+                </div>
+
+            </div>
         </section>
+
         <!-- Sección de Contacto -->
         <section id="contacto" class="contacto-section"
             style="padding: 40px 20px; text-align: center; background-color: #f9f9f9;">
-            <h2>Contáctanos</h2>
-            <p>¿Tienes dudas sobre tu cabello o nuestros productos orgánicos? ¡Escríbenos!</p>
-            <div style="margin-top: 20px;">
-                <p><strong>Ubicación:</strong> Cali, Colombia</p>
-                <p><strong>Correo:</strong> elemental.organic@gmail.com</p>
-                <p><strong>Teléfono:</strong> 317 408 20 24</p>
-                <a href="https://wa.me/573174082024" target="_blank"
-                    style="display: inline-block; background-color: #25d366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 10px;">Chatear
-                    por WhatsApp</a>
+            <div class="contacto-container">
+                <h2>Contáctanos</h2>
+                <p>¿Tienes dudas sobre tu cabello o nuestros productos orgánicos? ¡Escríbenos!</p>
+                <div style="margin-top: 20px;">
+                    <p><strong>Ubicación:</strong> Cali, Colombia</p>
+                    <p><strong>Correo:</strong> elemental.organic@gmail.com</p>
+                    <p><strong>Teléfono:</strong> 317 408 20 24</p>
+                    <a href="https://wa.me/573174082024" target="_blank"
+                        style="display: inline-block; background-color: #25d366; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 10px;">Chatear
+                        por WhatsApp</a>
+                </div>
             </div>
         </section>
 
